@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<ul>
+    {% for customer in customers %}
+        <li>{{ customer }} <a href="/customers/delete/{{ customer.id }}/">usuń</a>
+                            <a href="/edit_customer/{{ customer.id }}">edytuj</a>
+                            <a href="/add_offer/">nowa oferta</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

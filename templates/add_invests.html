@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    <input type="text" placeholder="Nazwa" name="name">
+    <input type="text" placeholder="Adres" name="adress">
+    <input type="number" placeholder="Ilość apartamentów" name="nr_of_ap">
+    <input type="text" placeholder="www" name="www">
+    <input type="submit" value="Zapisz">
+</form>
+{% endblock %}

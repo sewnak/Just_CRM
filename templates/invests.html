@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<ul>
+    {% for invest in invests %}
+        <li>{{ invest}}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

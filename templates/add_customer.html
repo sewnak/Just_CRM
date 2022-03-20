@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    <input type="text" placeholder="imie" name="first_name">
+    <input type="text" placeholder="nazwisko" name="last_name">
+    <input type="text" placeholder="ulica" name="street">
+    <input type="text" placeholder="miasto" name="city">
+    <input type="number" placeholder="nr telefonu" name="phone">
+    <input type="text" placeholder="email" name="email">
+    <input type="submit" value="Zapisz">
+</form>
+{% endblock %}

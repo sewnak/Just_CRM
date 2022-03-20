@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    <input type="text" placeholder="imie" name="first_name" value="{{ customer.first_name }}">
+    <input type="text" placeholder="nazwisko" name="last_name" value="{{ customer.last_name }}">
+    <input type="text" placeholder="ulica" name="street" value="{{ customer.street }}">
+    <input type="text" placeholder="miasto" name="city" value="{{ customer.city }}">
+    <input type="number" placeholder="nr telefonu" name="phone" value="{{ customer.phone }}">
+    <input type="text" placeholder="email" name="email">
+    <input type="submit" value="Zapisz">
+</form>
+{% endblock %}
+

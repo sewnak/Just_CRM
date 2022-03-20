@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    <input type="number" placeholder="nr" name="nr">
+    <input type="number" placeholder="m2" name="m2">
+    <select name="Inwestycja">
+        {% for i in invests %}
+            <option value="{{ i.id }}">{{ i }}" </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Zapisz">
+</form>
+{% endblock %}

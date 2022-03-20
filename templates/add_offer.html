@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+      <select name="Klient">
+        {% for c in clients %}
+            <option value="{{ c.id }}">{{ c }}" </option>
+        {% endfor %}
+      </select>
+      <select name="Inwestycja">
+        {% for i in invests %}
+            <option value="{{ i.id }}">{{ i }}" </option>
+        {% endfor %}
+      </select>
+      <select name="Apartament">
+        {% for a in apartments %}
+            <option value="{{ a.id }}">{{ a }}" </option>
+        {% endfor %}
+      </select>
+    <input type="submit" value="Zapisz">
+</form>
+{% endblock %}

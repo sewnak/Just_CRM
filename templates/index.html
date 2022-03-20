@@ -1,0 +1,63 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Just_CRM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+<body>
+<div class="nav">
+    <label for="show-menu" class="show-menu">Show Menu</label>
+    <input type="checkbox" id="show-menu" role="button">
+        <ul id="menu">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li>
+            <a href="#">Klient ￬</a>
+            <ul class="hidden">
+                <li><a href="{% url 'add_customer' %}">Dodaj</a></li>
+                <li><a href="{% url 'customers' %}">Szukaj</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Oferty ￬</a>
+            <ul class="hidden">
+                <li><a href="{% url 'add_offer' %}">Nowa</a></li>
+                <li><a href="{% url 'offers' %}">Wysłane</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Umowy ￬</a>
+            <ul class="hidden">
+                <li><a href="{% url 'add_contract' %}">Nowa</a></li>
+                <li><a href="{% url 'contracts' %}">Wysłane</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Inwestycje ￬</a>
+            <ul class="hidden">
+                <li><a href="{% url 'invests' %}">Wszystkie</a></li>
+                <li><a href="{% url 'add_invest' %}">Nowa</a></li>
+                <li><a href="{% url 'apartments' %}">Apartamenty</a></li>
+                <li><a href="{% url 'add_apartment' %}">Dodaj Apartament</a></li>
+            </ul>
+        </li>
+        {% if request.user.is_authenticated %}
+            You are logged in: {{ request.user.username }}
+            <li><a href="{% url 'logout' %}">Wyloguj</a></li>
+        {% else %}
+        <li><a href="{% url 'login' %}">Zaloguj</a></li>
+        <li><a href="{% url 'signup' %}">Zarejestruj</a></li>
+        {% endif %}
+
+    </ul>
+</div>
+<div class="contener">
+    {% block content %}
+
+    {% endblock %}
+</div>
+</body>
+
+</html>

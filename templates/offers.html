@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<ul>
+    {% for offer in offers %}
+        <li>{{ offer }} <a href="/offers/delete/{{ offer.id }}/">usuń</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
